@@ -1237,41 +1237,6 @@
       "mealType": [
         "Beverage"
       ]
-    },
-    {
-      "id": 31,
-      "name": "Chocolate Cake",
-      "ingredients": [
-        "Cachaça (Brazilian sugarcane spirit)",
-        "Lime, cut into wedges",
-        "Granulated sugar",
-        "Ice cubes"
-      ],
-      "instructions": [
-        "In a glass, muddle lime wedges with granulated sugar to release the juice.",
-        "Fill the glass with ice cubes.",
-        "Pour cachaça over the ice and stir well.",
-        "Sip and enjoy the refreshing taste of the Brazilian Caipirinha!",
-        "Adjust sugar and lime to suit your taste preferences."
-      ],
-      "prepTimeMinutes": 5,
-      "cookTimeMinutes": 0,
-      "servings": 1,
-      "difficulty": "Easy",
-      "cuisine": "Brazilian",
-      "caloriesPerServing": 150,
-      "tags": [
-        "Caipirinha",
-        "Brazilian",
-        "Cocktail"
-      ],
-      "userId": 134,
-      "image": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/birthday_chocolate_24628_16x9.jpg",
-      "rating": 4.4,
-      "reviewCount": 55,
-      "mealType": [
-        "Beverage"
-      ]
     }
   ]
   
