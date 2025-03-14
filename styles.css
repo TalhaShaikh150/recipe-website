@@ -1,0 +1,116 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(33.333% - 20px);
+  max-width: 350px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2 {
+  margin: 0 0 15px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.card-content p {
+  margin: 0 0 15px;
+  color: #666;
+}
+
+.ingredients {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.ingredients li {
+  background-color: #e3f2fd;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+  color: #0277bd;
+}
+
+.instructions {
+  margin: 15px 0;
+}
+
+.instructions h3 {
+  margin: 0 0 10px;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.instructions p {
+  margin: 0;
+  color: #666;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.details span {
+  background-color: #ffecb3;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #ff6f00;
+}
+
+.tags {
+  margin: 15px 0;
+}
+.tags .tag {
+  display: inline-block;
+  background-color: #d1c4e9;
+  margin: 5px 5px 0 0;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px);
+  }
+}
