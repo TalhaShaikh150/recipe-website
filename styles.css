@@ -2,7 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #f8f9fa;
   color: #333;
   line-height: 1.6;
 }
@@ -13,6 +13,8 @@ body {
   justify-content: center;
   padding: 20px;
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
@@ -24,6 +26,7 @@ body {
   max-width: 350px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  border: 1px solid #e0e0e0;
 }
 
 .card:hover {
@@ -50,8 +53,9 @@ body {
 .card-content h2 {
   margin: 0 0 15px;
   font-size: 1.8em;
-  color: #333;
+  color: #2c3e50;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .card-content p {
@@ -74,11 +78,12 @@ body {
   border-radius: 8px;
   color: #0277bd;
   font-size: 0.9em;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .ingredients li:hover {
   background-color: #bbdefb;
+  transform: translateX(5px);
 }
 
 .instructions {
@@ -88,7 +93,7 @@ body {
 .instructions h3 {
   margin: 0 0 12px;
   font-size: 1.4em;
-  color: #333;
+  color: #2c3e50;
   font-weight: 600;
 }
 
@@ -112,11 +117,12 @@ body {
   color: #ff6f00;
   font-size: 0.9em;
   font-weight: 500;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .details span:hover {
   background-color: #ffe082;
+  transform: scale(1.05);
 }
 
 .tags {
@@ -131,11 +137,12 @@ body {
   border-radius: 6px;
   font-size: 0.85em;
   color: #512da8;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .tags .tag:hover {
   background-color: #b39ddb;
+  transform: translateY(-2px);
 }
 
 /* Responsive Design */
