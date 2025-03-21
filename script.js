@@ -1239,40 +1239,40 @@
       ]
     }
   ]
-  
-let option = document.getElementById('userchoice')
+  let option = document.getElementById('userchoice');
 
-function Generate(){
+  function Generate() {
+    let container = document.querySelector('.container');
+    container.innerHTML = ""; // Clear previous content
   
-
-  let container = document.querySelector('.container')
+    for (let i = 0; i < recipes.length; i++) {
+      // Show all recipes by default (if no option is selected)
+      if (option.value === "All" || recipes[i].difficulty === option.value) {
+        container.innerHTML += `
+       <div class="card">
+        <img src="${recipes[i].image}" alt="Recipe Image">
+        <div class="card-content">
+          <h2>${recipes[i].name}</h2>
+          <p>Short description of the recipe.</p>
+          <ul class="ingredients">
+            <p>${recipes[i].ingredients}</p>
+          </ul>
+          <div class="instructions">
+            <h3>Instructions</h3>
+            <p>${recipes[i].instructions}.</p>
+          </div>
+          <div class="details">
+            <span class="servings">Servings: ${recipes[i].servings}</span>
+            <span class="difficulty">Difficulty: ${recipes[i].difficulty}</span>
+          </div>
+          <div class="tags">
+            <span class="tag">Tag1</span>
+            <span class="tag">Tag2</span>
+          </div>
+        </div>
+      </div>`;
+      }
+    }
+  }
   
-    container.innerHTML = ""
-  for(let i = 0; i < recipes.length;i++){
-    if(recipes[i].difficulty === option.value){
-      container.innerHTML += `
-     <div class="card">
-      <img src="${recipes[i].image}" alt="Recipe Image">
-      <div class="card-content">
-        <h2>${recipes[i].name}</h2>
-        <p>Short description of the recipe.</p>
-        <ul class="ingredients">
-          <p>${recipes[i].ingredients}</p>
-        </ul>
-        <div class="instructions">
-          <h3>Instructions</h3>
-          <p>${recipes[i].instructions}.</p>
-        </div>
-        <div class="details">
-          <span class="servings">Servings: ${recipes[i].servings  }</span>
-          <span class="difficulty">Difficulty: ${recipes[i].difficulty}</span>
-        </div>
-        <div class="tags">
-          <span class="tag">Tag1</span>
-          <span class="tag">Tag2</span>
-        </div>
-      </div>
-    </div>`
-    } 
-    }
-    }
+Generate()

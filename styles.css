@@ -1,9 +1,10 @@
-body{
+body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
   color: #333;
+  line-height: 1.6;
 }
 
 .container {
@@ -16,38 +17,48 @@ body{
 
 .card {
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: calc(33.333% - 20px);
   max-width: 350px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-bottom: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card-content {
-  padding: 20px;
+  padding: 24px;
 }
 
 .card-content h2 {
   margin: 0 0 15px;
   font-size: 1.8em;
   color: #333;
+  font-weight: 700;
 }
 
 .card-content p {
   margin: 0 0 15px;
   color: #666;
+  font-size: 1em;
+  line-height: 1.5;
 }
 
 .ingredients {
@@ -58,51 +69,76 @@ body{
 
 .ingredients li {
   background-color: #e3f2fd;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 6px;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
   color: #0277bd;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.ingredients li:hover {
+  background-color: #bbdefb;
 }
 
 .instructions {
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .instructions h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: 1.4em;
   color: #333;
+  font-weight: 600;
 }
 
 .instructions p {
   margin: 0;
   color: #666;
+  font-size: 0.95em;
+  line-height: 1.6;
 }
 
 .details {
   display: flex;
   justify-content: space-between;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .details span {
   background-color: #ffecb3;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 15px;
+  border-radius: 8px;
   color: #ff6f00;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.details span:hover {
+  background-color: #ffe082;
 }
 
 .tags {
-  margin: 15px 0;
+  margin: 20px 0;
 }
+
 .tags .tag {
   display: inline-block;
   background-color: #d1c4e9;
   margin: 5px 5px 0 0;
-  padding: 5px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  color: #512da8;
+  transition: background-color 0.3s ease;
 }
 
+.tags .tag:hover {
+  background-color: #b39ddb;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .card {
     width: calc(50% - 20px);
@@ -112,5 +148,37 @@ body{
 @media (max-width: 480px) {
   .card {
     width: calc(100% - 20px);
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-content h2 {
+    font-size: 1.6em;
+  }
+
+  .card-content p {
+    font-size: 0.9em;
+  }
+
+  .ingredients li {
+    font-size: 0.85em;
+  }
+
+  .instructions h3 {
+    font-size: 1.2em;
+  }
+
+  .instructions p {
+    font-size: 0.9em;
+  }
+
+  .details span {
+    font-size: 0.85em;
+  }
+
+  .tags .tag {
+    font-size: 0.8em;
   }
 }

@@ -1,79 +1,25 @@
-<!-- Dropdown to filter recipes by difficulty -->
-<select id="difficultyFilter">
-  <option value="all">All</option>
-  <option value="easy">Easy</option>
-  <option value="medium">Medium</option>
-</select>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
 
-<div class="container"></div>
+    let number = [1,4,3,5,2,6]
 
-<script>
-  let container = document.querySelector('.container');
-  let difficultyFilter = document.getElementById('difficultyFilter');
-  let allRecipes = [];
-
-  // Fetch the data from the API
-  fetch('https://dummyjson.com/recipes')
-    .then(response => response.json())  // Convert the response to JSON
-    .then(data => {
-      // Store all recipes in the allRecipes variable for later filtering
-      allRecipes = data.recipes;
-      
-      // Render all recipes initially
-      renderRecipes(allRecipes);
-      // console.log(allRecipes);
-      
-
-      // Filter recipes based on selected difficulty
-      difficultyFilter.addEventListener('change', function () {
-        let selectedDifficulty = difficultyFilter.value;
+    for(let i = 0; i < number.length; i++){
+      if(number[i] % 2){
+        console.log("Odd " + number[i])
+      }
+      else{
+        console.log("Even " + number[i])
         
-        let filteredRecipes = allRecipes.filter(recipe => {
-          if (selectedDifficulty === 'all') {
-            return true; // Show all recipes
-          }
-          return recipe.difficulty.toLowerCase() === selectedDifficulty;
-        });
-
-        renderRecipes(filteredRecipes); // Re-render filtered recipes
-      //   console.log(filteredRecipes);
-        
-      });
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-
-  // Function to render the recipes on the page
-  function renderRecipes(recipes) {
-    // Clear the container before rendering new recipes
-    container.innerHTML = "";
-
-    // Loop through the recipes and generate HTML for each
-    recipes.forEach(recipe => {
-      container.innerHTML += `
-        <div class="card">
-          <img src="${recipe.image}" alt="Recipe Image">
-          <div class="card-content">
-            <h2>${recipe.name}</h2>
-            <p>${recipe.shortDescription || 'About  the recipe.'}</p>
-            <ul class="ingredients">
-              <p>${recipe.ingredients.join(', ')}</p>
-            </ul>
-            <div class="instructions">
-              <h3>Instructions</h3>
-              <p>${recipe.instructions}</p>
-            </div>
-            <div class="details">
-              <span class="servings" >Servings: ${recipe.servings}</span>
-              <span class="difficulty">Difficulty: ${recipe.difficulty}</span>
-            </div>
-            <div class="tags">
-              ${recipe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-          </div>
-        </div>
-      `;
-    });
-  }
-</script>
+    }
+    }
+  </script>
+</body>
+</html>
